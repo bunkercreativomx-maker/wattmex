@@ -25,7 +25,7 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px}
 .wrap{width:min(1160px,100% - 2.5rem);margin-inline:auto}
 h1,h2,h3{font-variation-settings:var(--narrow);font-weight:800;line-height:.98;letter-spacing:-.01em;margin:0}
-h1{font-size:clamp(2.7rem,7.2vw,5.4rem)}
+h1{font-size:clamp(2.5rem,6.2vw,4.9rem)}
 h2{font-size:clamp(2rem,4.6vw,3.3rem);max-width:18ch}
 h3{font-size:1.75rem}
 p{margin:0;max-width:62ch}
@@ -42,7 +42,7 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(243,245,246,.92);bac
 .logo{display:flex;align-items:baseline;gap:.55rem;text-decoration:none}
 .logo b{font-variation-settings:"wdth" 70;font-weight:900;font-size:1.75rem;letter-spacing:-.02em}
 .logo b i{font-style:normal;color:var(--red)}
-.logo small{color:var(--steel);font-size:.82rem}
+.logo small{color:#3A4955;font-size:.9rem}
 .top nav{display:flex;gap:1.4rem;align-items:center}
 .top nav a.l{text-decoration:none;color:var(--steel);font-size:.95rem}
 .top nav a.l:hover{color:var(--ink)}
@@ -66,10 +66,10 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(243,245,246,.92);bac
 .board ul{list-style:none;margin:0;padding:0}
 .board li{display:grid;grid-template-columns:76px 1fr auto;gap:1rem;align-items:center;padding:.8rem 0;border-bottom:1px solid #22313D}
 .board li:last-child{border-bottom:0}
-.board .thumb{width:76px;height:58px;background:#EEF2F4;border-radius:8px;display:grid;place-items:center;padding:6px}
+.board .thumb{width:76px;height:58px;background:#C9D3DA;border-radius:8px;display:grid;place-items:center;padding:6px}
 .board .thumb img{max-height:100%;object-fit:contain}
 .board .m{font-variation-settings:"wdth" 75;font-weight:800;font-size:1.2rem;color:#fff;line-height:1.1}
-.board .t{font-size:.86rem;color:#9FB0BD}
+.board .t{font-size:.9rem;color:#C2CFD9}
 .led{display:inline-flex;align-items:center;gap:.45rem;font-size:.86rem;font-weight:600;color:#BFF0D2;white-space:nowrap}
 .led::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--led);box-shadow:0 0 0 3px rgba(31,175,90,.18),0 0 12px rgba(31,175,90,.9)}
 .board li .led::before{animation:on .5s ease-out both}
@@ -78,7 +78,7 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(243,245,246,.92);bac
 .board li:nth-child(3) .led::before{animation-delay:1s}
 .board li:nth-child(4) .led::before{animation-delay:1.25s}
 @keyframes on{from{background:#2A3A47;box-shadow:none}to{}}
-.board-foot{font-size:.8rem;color:#7F92A1;padding-top:.8rem}
+.board-foot{font-size:.9rem;color:#C2CFD9;padding-top:.8rem}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 @media(max-width:920px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:2.6rem}}
 
@@ -102,7 +102,7 @@ section.s{padding:5rem 0}
 /* catalog */
 .cat{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
 .prod{background:var(--paper);border:1px solid var(--line);border-radius:12px;display:grid;grid-template-rows:auto 1fr;overflow:hidden}
-.prod .ph{background:linear-gradient(180deg,#E9EDF0,#F7F8F9);height:250px;display:grid;place-items:center;padding:1.6rem;position:relative}
+.prod .ph{background:linear-gradient(180deg,#D3DBE1,#ECF0F3);height:250px;display:grid;place-items:center;padding:1.6rem;position:relative}
 .prod .ph img{max-height:100%;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(19,33,44,.18))}
 .prod .ph .led{position:absolute;top:1rem;left:1rem;color:#14653A;background:#fff;padding:.3rem .65rem .3rem .55rem;border-radius:99px;border:1px solid #CDE7D7}
 .prod .body{padding:1.5rem 1.6rem 1.7rem;display:flex;flex-direction:column;gap:1rem}
@@ -173,7 +173,9 @@ footer{background:var(--ink);color:#9FB0BD;padding:2.4rem 0;font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
 footer b{color:#fff}
 
-.wa-float{position:fixed;right:18px;bottom:18px;z-index:30;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.wa-float{position:fixed;right:22px;bottom:22px;opacity:0;pointer-events:none;transition:opacity .25s;}
+.wa-float.on{opacity:1;pointer-events:auto}
+.wa-float{z-index:30;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 25px rgba(0,0,0,.25)}
 .wa-float svg{width:32px;height:32px}
 </style>
 </head>
@@ -199,7 +201,7 @@ footer b{color:#fff}
   <div class="wrap">
     <div>
       <div class="auth">Distribuidor autorizado Hypontech en México</div>
-      <h1>Vende el proyecto hoy. El inversor ya está en bodega.</h1>
+      <h1>Vende el proyecto hoy.<br>El inversor ya está en bodega.</h1>
       <p class="lead">Somos tu proveedor de inversores Hypontech para instalaciones solares. Tenemos el equipo en stock en México, lo enviamos a todo el país y no te pedimos un mínimo de compra.</p>
       <div class="ctas">
         <a class="btn btn-wa js-wa" href="#" data-msg="Hola WattMex, soy instalador y quiero una cotización de inversores Hypontech con envío.">
@@ -216,7 +218,7 @@ footer b{color:#fff}
     </div>
 
     <aside class="board" aria-label="Inventario disponible">
-      <div class="board-head"><span>Inventario WattMex</span><span><span class="led" style="font-size:0"></span>Disponible hoy</span></div>
+      <div class="board-head"><span>Inventario WattMex</span><span>Bodega en México</span></div>
       <ul>
         <li><div class="thumb"><img src="img/hms-1.6-2k.webp" alt=""></div><div><div class="m">HMS 1.6-2K</div><div class="t">Microinversor de 4 paneles</div></div><span class="led">En stock</span></li>
         <li><div class="thumb"><img src="img/hps-3-6k-pro.webp" alt=""></div><div><div class="m">HPS 3-6K PRO</div><div class="t">Inversor de red residencial</div></div><span class="led">En stock</span></li>
@@ -444,6 +446,8 @@ footer b{color:#fff}
 const WA_NUMBER = "5210000000000";
 const wa = msg => "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
 document.querySelectorAll(".js-wa").forEach(a => { a.href = wa(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
+const fl=document.querySelector(".wa-float"),hero=document.querySelector(".hero");
+addEventListener("scroll",()=>fl.classList.toggle("on",scrollY>hero.offsetHeight-100),{passive:true});
 document.getElementById("qform").addEventListener("submit", e => {
   e.preventDefault();
   const f = e.target, v = n => (f.elements[n].value || "").trim();
